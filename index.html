@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maison Mode Paris | Moda premium francesa online</title>
+    <meta
+      name="description"
+      content="Descubre Maison Mode Paris: moda premium francesa, nuevas colecciones, best sellers y compra online con experiencia elegante y rápida."
+    />
+    <link rel="canonical" href="https://maisonmode.fr/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:site_name" content="Maison Mode Paris" />
+    <meta property="og:title" content="Maison Mode Paris | Moda premium francesa online" />
+    <meta
+      property="og:description"
+      content="Tienda online de ropa premium inspirada en París. Explora novedades, best sellers y colecciones por categoría."
+    />
+    <meta property="og:url" content="https://maisonmode.fr/" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1200&q=80" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Maison Mode Paris | Moda premium francesa online" />
+    <meta
+      name="twitter:description"
+      content="Descubre colecciones premium con navegación rápida, catálogo filtrable y checkout optimizado."
+    />
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1200&q=80" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="css/custom-effects.css" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "name": "Maison Mode Paris",
+            "url": "https://maisonmode.fr/",
+            "logo": "https://maisonmode.fr/assets/logo.png",
+            "sameAs": ["https://www.instagram.com/maisonmodeparis"]
+          },
+          {
+            "@type": "WebSite",
+            "name": "Maison Mode Paris",
+            "url": "https://maisonmode.fr/",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://maisonmode.fr/catalogo.html?q={search_term_string}",
+              "query-input": "required name=search_term_string"
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body data-page="home" class="min-h-screen bg-stone-100 text-stone-900 antialiased">
+    <a
+      class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-white focus:px-3 focus:py-2 focus:text-sm focus:font-semibold focus:text-stone-900 focus:shadow"
+      href="#main-content"
+      >Saltar al contenido principal</a
+    >
+
+    <header class="mx-auto w-[min(1200px,calc(100%-2rem))] pt-4 md:pt-6">
+      <div id="navbar-root"></div>
+    </header>
+
+    <main id="main-content" class="pb-12 pt-6 md:pb-16 md:pt-8">
+      <section
+        class="mx-auto grid w-[min(1200px,calc(100%-2rem))] gap-6 overflow-hidden rounded-3xl border border-stone-200 bg-white p-4 shadow-sm md:grid-cols-[1.15fr_.85fr] md:p-6"
+        aria-labelledby="hero-title"
+      >
+        <img
+          src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1600&q=80"
+          alt="Modelo vistiendo abrigo y prendas premium en una calle parisina"
+          width="1600"
+          height="1200"
+          class="hero-fade h-72 w-full rounded-2xl object-cover md:h-full"
+          fetchpriority="high"
+        />
+        <div class="flex flex-col justify-center gap-4 md:gap-5">
+          <p class="text-xs font-semibold uppercase tracking-[0.24em] text-emerald-700">Campaña Primavera Verano</p>
+          <h1 id="hero-title" class="font-serif text-4xl leading-tight text-stone-900 md:text-5xl">
+            Elegancia parisina para el día a día
+          </h1>
+          <p class="max-w-prose text-sm leading-relaxed text-stone-700 md:text-base">
+            Descubre prendas versátiles para oficina, ciudad y escapadas de fin de semana con materiales duraderos y corte contemporáneo.
+          </p>
+          <a
+            class="inline-flex w-fit items-center rounded-full bg-emerald-700 px-5 py-2.5 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-emerald-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700"
+            href="catalogo.html"
+            >Explorar catálogo</a
+          >
+        </div>
+      </section>
+
+      <section class="mx-auto mt-10 w-[min(1200px,calc(100%-2rem))]" aria-labelledby="new-arrivals-title">
+        <div class="mb-4 flex items-baseline justify-between gap-4">
+          <h2 id="new-arrivals-title" class="font-serif text-3xl text-stone-900">Nuevos lanzamientos</h2>
+          <a class="text-sm font-semibold text-emerald-700 hover:text-emerald-800" href="catalogo.html">Ver todo</a>
+        </div>
+        <div class="grid auto-cols-[75%] grid-flow-col gap-4 overflow-x-auto pb-2 md:auto-cols-[30%] xl:auto-cols-[23%]" id="new-arrivals-list"></div>
+      </section>
+
+      <section class="mx-auto mt-10 w-[min(1200px,calc(100%-2rem))]" aria-labelledby="best-sellers-title">
+        <div class="mb-4 flex items-baseline justify-between gap-4">
+          <h2 id="best-sellers-title" class="font-serif text-3xl text-stone-900">Más vendidos</h2>
+          <a class="text-sm font-semibold text-emerald-700 hover:text-emerald-800" href="catalogo.html">Ver todo</a>
+        </div>
+        <div class="grid auto-cols-[75%] grid-flow-col gap-4 overflow-x-auto pb-2 md:auto-cols-[30%] xl:auto-cols-[23%]" id="best-sellers-list"></div>
+      </section>
+
+      <section class="mx-auto mt-12 w-[min(1200px,calc(100%-2rem))] rounded-3xl border border-stone-200 bg-white p-5 shadow-sm md:p-8" aria-labelledby="faq-title">
+        <h2 id="faq-title" class="font-serif text-3xl text-stone-900">Preguntas frecuentes</h2>
+        <div class="mt-4 grid gap-3">
+          <details class="rounded-xl border border-stone-200 bg-stone-50 p-4">
+            <summary class="cursor-pointer font-semibold text-stone-900">¿Cuánto tarda el envío en Francia?</summary>
+            <p class="mt-2 text-sm text-stone-700">Envío estándar entre 24 y 72 horas laborables según ciudad.</p>
+          </details>
+          <details class="rounded-xl border border-stone-200 bg-stone-50 p-4">
+            <summary class="cursor-pointer font-semibold text-stone-900">¿Cómo selecciono mi talla?</summary>
+            <p class="mt-2 text-sm text-stone-700">Cada producto incluye guía de talla y recomendación de ajuste en la ficha.</p>
+          </details>
+          <details class="rounded-xl border border-stone-200 bg-stone-50 p-4">
+            <summary class="cursor-pointer font-semibold text-stone-900">¿Puedo devolver un producto?</summary>
+            <p class="mt-2 text-sm text-stone-700">Sí, dispones de 30 días para devoluciones sin coste adicional.</p>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <footer class="mx-auto w-[min(1200px,calc(100%-2rem))] pb-8">
+      <div id="footer-root"></div>
+    </footer>
+
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>

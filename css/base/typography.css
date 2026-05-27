@@ -1,0 +1,28 @@
+body {
+  font-family: "Manrope", sans-serif;
+  color: var(--color-ink);
+  background:
+    radial-gradient(circle at top right, #efe6da, transparent 35%),
+    linear-gradient(180deg, var(--color-paper) 0%, #f8f6f2 100%);
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  line-height: 1.2;
+  font-family: "Cormorant Garamond", serif;
+}
+
+h1 {
+  font-size: clamp(2rem, 3vw, 3rem);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 2vw, 2.2rem);
+}
+
+p {
+  margin: 0;
+}

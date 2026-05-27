@@ -1,0 +1,226 @@
+.c-navbar,
+.c-footer,
+.c-product-card,
+.c-summary,
+.c-filter-bar,
+#checkout-form fieldset {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-m);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-soft);
+}
+
+.c-navbar,
+.c-footer,
+.c-filter-bar {
+  padding: var(--space-3);
+}
+
+.c-navbar {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+.c-navbar__brand {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.4rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.c-navbar__search input {
+  width: 100%;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 0.6rem 0.9rem;
+}
+
+.c-navbar__menu {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.c-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-2);
+  border-radius: 999px;
+  padding: 0.7rem 1.2rem;
+  border: 1px solid transparent;
+  font-weight: 600;
+  transition: transform 0.2s ease;
+}
+
+.c-btn:hover {
+  transform: translateY(-1px);
+}
+
+.c-btn--primary {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.c-hero {
+  display: grid;
+  gap: var(--space-4);
+  align-items: center;
+  margin-bottom: var(--space-6);
+}
+
+.c-hero__media,
+.c-product-gallery__main {
+  min-height: 340px;
+  border-radius: var(--radius-l);
+  background:
+    linear-gradient(120deg, rgb(31 90 79 / 45%), rgb(198 106 61 / 40%)),
+    radial-gradient(circle at 30% 20%, #f0e6db 0%, #d8cdc1 55%, #c0b2a4 100%);
+}
+
+.c-hero__content {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.c-eyebrow {
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  font-size: 0.88rem;
+}
+
+.c-section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: var(--space-3);
+}
+
+.c-product-card {
+  overflow: hidden;
+}
+
+.c-product-card__media {
+  min-height: 180px;
+  background: linear-gradient(160deg, #efe8de, #d9d2c8);
+}
+
+.c-product-card__body {
+  display: grid;
+  gap: var(--space-1);
+  padding: var(--space-3);
+}
+
+.c-breadcrumb {
+  list-style: none;
+  display: flex;
+  gap: 0.4rem;
+  padding: 0;
+  margin: 0 0 var(--space-3);
+  color: var(--color-muted);
+}
+
+.c-filter-bar {
+  display: grid;
+  gap: var(--space-3);
+  margin-block: var(--space-4);
+}
+
+.c-filter-bar label,
+#checkout-form label,
+.c-product-info label {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.c-filter-bar select,
+#checkout-form input,
+.c-product-info select,
+.c-product-info input {
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 0.55rem 0.7rem;
+  background: #fff;
+}
+
+.c-product-info {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.c-price {
+  color: var(--color-accent);
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+#checkout-form {
+  display: grid;
+  gap: var(--space-3);
+}
+
+#checkout-form fieldset {
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-3);
+}
+
+.c-checkout-steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  list-style: none;
+  padding: 0;
+  margin: var(--space-3) 0 var(--space-4);
+}
+
+.c-checkout-steps li {
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 0.35rem 0.8rem;
+  background: #fff;
+}
+
+.c-checkout-steps li[aria-current="step"] {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.c-summary {
+  padding: var(--space-3);
+}
+
+.c-summary dl {
+  margin: 0 0 var(--space-3);
+}
+
+.c-summary dl div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--space-2);
+}
+
+.c-footer {
+  margin-bottom: var(--space-4);
+}
+
+.c-footer__cols {
+  display: grid;
+  gap: var(--space-3);
+}
+
+@media (min-width: 768px) {
+  .c-hero {
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+
+  .c-filter-bar {
+    grid-template-columns: repeat(2, minmax(0, 260px));
+  }
+
+  .c-footer__cols {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

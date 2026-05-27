@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Conceptual rules for the prototype
+Disallow: /js/
+Disallow: /data/
+
+Sitemap: https://maisonmode.fr/sitemap.xml

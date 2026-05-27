@@ -6,14 +6,23 @@ El boilerplate más básico para cualquier estudiante de 4Geeks Academy, empieza
 
 ## ¿Qué hacer a continuación?
 
-Crea un archivo `index.html` con [la estructura básica de HTML](https://4geeks.com/es/lesson/what-is-html-learn-html-es#estructura-de-pgina) y ve el resultado en vivo corriendo un servidor web utilizando el siguiente comando:
+Crea o usa los archivos HTML del proyecto y ve el resultado en vivo corriendo un servidor web utilizando el siguiente comando:
 
 ```bash
 $ pip3 install flask && python3 server.py
 ```
 
-- Puedes crear tantos archivos HTML cómo desees.
-- También puedes crear archivos CSS e importarlos en tu página web utilizando una etiqueta `<link>` ubicándola entre las etiquetas `<head></head>`, de la siguiente manera:
+- Este repositorio ya incluye un prototipo eCommerce con estas vistas:
+  - `index.html`
+  - `catalogo.html`
+  - `producto.html`
+  - `carrito.html`
+  - `checkout.html`
+- Los estilos se organizan en `css/base`, `css/layout`, `css/components` y `css/pages`.
+- El JavaScript se organiza en `js/core`, `js/state`, `js/components` y `js/pages`.
+- Los productos mock están en `data/products.json`.
+
+Ejemplo de importación de CSS en el `<head>`:
 
 ```html
 <head>
