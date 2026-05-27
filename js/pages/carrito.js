@@ -1,5 +1,14 @@
 import { formatEUR } from "../core/currency.js";
 import { getCart, seedCartIfEmpty, totals } from "../state/cart.state.js";
+import { removeFromCart } from "../state/cart.state.js";
+
+// Función para eliminar artículo y recargar el carrito
+function eliminarArticuloDelCarrito(id) {
+  removeFromCart(id);
+  // Recargar productos (puedes optimizar si tienes los productos en contexto)
+  const productos = window.__PRODUCTOS__ || [];
+  initCart(productos);
+}
 
 export function initCart(products) {
   seedCartIfEmpty(products);
@@ -15,7 +24,10 @@ export function initCart(products) {
   itemsRoot.innerHTML = items
     .map(
       (item) => `
-      <article class="grid grid-cols-[80px_1fr_auto] items-center gap-3 rounded-2xl border border-stone-200 bg-white p-3 shadow-sm">
+      <article class="relative grid grid-cols-[80px_1fr_auto] items-center gap-3 rounded-2xl border border-stone-200 bg-white p-3 shadow-sm">
+        <button aria-label="Eliminar artículo" class="absolute right-2 top-2 text-stone-400 hover:text-red-500 transition-colors delete-item-btn" data-id="${item.id}">
+          &times;
+        </button>
         <img
           class="h-20 w-20 rounded-xl object-cover"
           src="https://picsum.photos/seed/cart-${item.id}/320/320"
@@ -35,6 +47,14 @@ export function initCart(products) {
     `
     )
     .join("");
+
+  // Lógica para eliminar artículo
+  itemsRoot.querySelectorAll('.delete-item-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const id = btn.getAttribute('data-id');
+      eliminarArticuloDelCarrito(id);
+    });
+  });
 
   const summary = totals();
   subtotalNode.textContent = formatEUR(summary.subtotal);
