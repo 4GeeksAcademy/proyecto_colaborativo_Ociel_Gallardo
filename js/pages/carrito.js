@@ -26,6 +26,7 @@ export function initCart(products) {
   const buyButton = document.querySelector('a[href="checkout.html"]');
 
   const items = getCart();
+  const productById = new Map(products.map((product) => [String(product.id), product]));
   if (!itemsRoot) return;
 
   if (buyButton && !buyButton.dataset.emptyCartValidation) {
@@ -38,16 +39,19 @@ export function initCart(products) {
   }
 
   itemsRoot.innerHTML = items
-    .map(
-      (item) => `
+    .map((item) => {
+      const match = productById.get(String(item.id));
+      const imageSrc = item.image || match?.image || `https://picsum.photos/seed/cart-item-${item.id}/320/320`;
+      const imageAlt = match?.alt || `Miniatura de ${item.name}`;
+      return `
       <article class="relative grid grid-cols-[80px_1fr_auto] items-center gap-3 rounded-2xl border border-stone-200 bg-white p-3 shadow-sm">
         <button aria-label="Eliminar artículo" class="absolute right-2 top-2 text-stone-400 hover:text-red-500 transition-colors delete-item-btn" data-id="${item.id}">
           &times;
         </button>
         <img
           class="h-20 w-20 rounded-xl object-cover"
-          src="https://picsum.photos/seed/cart-${item.id}/320/320"
-          alt="Miniatura de ${item.name}"
+          src="${imageSrc}"
+          alt="${imageAlt}"
           width="320"
           height="320"
           loading="lazy"
@@ -60,8 +64,8 @@ export function initCart(products) {
         </div>
         <p class="text-sm font-semibold text-emerald-700 md:text-base">${formatEUR(item.quantity * item.price)}</p>
       </article>
-    `
-    )
+    `;
+    })
     .join("");
 
   // Lógica para eliminar artículo
