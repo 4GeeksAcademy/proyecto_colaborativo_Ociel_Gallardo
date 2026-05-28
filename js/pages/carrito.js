@@ -23,9 +23,19 @@ export function initCart(products) {
   const subtotalNode = document.getElementById("cart-subtotal");
   const taxNode = document.getElementById("cart-tax");
   const totalNode = document.getElementById("cart-total");
+  const buyButton = document.querySelector('a[href="checkout.html"]');
 
   const items = getCart();
   if (!itemsRoot) return;
+
+  if (buyButton && !buyButton.dataset.emptyCartValidation) {
+    buyButton.addEventListener("click", (event) => {
+      if (getCart().length > 0) return;
+      event.preventDefault();
+      window.alert("Por favor seleccione 1 producto a comprar");
+    });
+    buyButton.dataset.emptyCartValidation = "true";
+  }
 
   itemsRoot.innerHTML = items
     .map(
