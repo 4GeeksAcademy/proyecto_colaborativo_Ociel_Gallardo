@@ -26,8 +26,16 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+    <link rel="stylesheet" href="css/tailwind.generated.css" />
     <link rel="stylesheet" href="css/custom-effects.css" />
 
     <script type="application/ld+json">
@@ -92,12 +100,13 @@
         <section aria-label="Galería del producto">
           <img
             id="product-image"
-            src="https://picsum.photos/seed/abrigo-urban-wool-beige-hero/1200/1400"
+            src="https://picsum.photos/seed/abrigo-urban-wool-beige-hero/960/1120"
             alt="Abrigo Urban Wool beige con corte premium y textura de lana"
-            width="1200"
-            height="1400"
+            width="960"
+            height="1120"
             class="h-full max-h-[620px] w-full rounded-2xl object-cover"
             fetchpriority="high"
+            decoding="async"
           />
         </section>
 

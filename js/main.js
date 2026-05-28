@@ -12,13 +12,19 @@ async function bootstrap() {
   renderFooter(document.getElementById("footer-root"));
 
   const page = document.body.dataset.page;
-  const products = await getProducts();
 
-  if (page === "home") initHome(products);
-  if (page === "catalogo") initCatalog(products);
-  if (page === "producto") initProduct(products);
-  if (page === "carrito") initCart(products);
-  if (page === "checkout") initCheckout();
+  if (page === "checkout") {
+    initCheckout();
+    return;
+  }
+
+  if (page === "home" || page === "catalogo" || page === "producto" || page === "carrito") {
+    const products = await getProducts();
+    if (page === "home") initHome(products);
+    if (page === "catalogo") initCatalog(products);
+    if (page === "producto") initProduct(products);
+    if (page === "carrito") initCart(products);
+  }
 }
 
 bootstrap().catch((error) => {

@@ -32,8 +32,16 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+    <link rel="stylesheet" href="css/tailwind.generated.css" />
     <link rel="stylesheet" href="css/custom-effects.css" />
 
     <script type="application/ld+json">
@@ -78,12 +86,13 @@
         aria-labelledby="hero-title"
       >
         <img
-          src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1600&q=80"
+          src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1200&q=70"
           alt="Modelo vistiendo abrigo y prendas premium en una calle parisina"
-          width="1600"
-          height="1200"
+          width="1200"
+          height="900"
           class="hero-fade h-72 w-full rounded-2xl object-cover md:h-full"
           fetchpriority="high"
+          decoding="async"
         />
         <div class="flex flex-col justify-center gap-4 md:gap-5">
           <p class="text-xs font-semibold uppercase tracking-[0.24em] text-emerald-700">Campaña Primavera Verano</p>
