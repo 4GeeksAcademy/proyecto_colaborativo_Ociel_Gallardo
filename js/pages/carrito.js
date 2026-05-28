@@ -3,7 +3,13 @@ import { getCart, seedCartIfEmpty, totals } from "../state/cart.state.js";
 import { removeFromCart } from "../state/cart.state.js";
 
 // Función para eliminar artículo y recargar el carrito
-function eliminarArticuloDelCarrito(id) {
+function eliminarArticuloDelCarrito(id, nombreProducto) {
+  const confirmarEliminacion = window.confirm(
+    `¿Estás seguro de que deseas cancelar la compra de "${nombreProducto}"?`
+  );
+
+  if (!confirmarEliminacion) return;
+
   removeFromCart(id);
   // Recargar productos (puedes optimizar si tienes los productos en contexto)
   const productos = window.__PRODUCTOS__ || [];
@@ -50,9 +56,11 @@ export function initCart(products) {
 
   // Lógica para eliminar artículo
   itemsRoot.querySelectorAll('.delete-item-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
+    btn.addEventListener('click', () => {
       const id = btn.getAttribute('data-id');
-      eliminarArticuloDelCarrito(id);
+      const item = items.find((product) => String(product.id) === String(id));
+      const nombreProducto = item?.name || "este producto";
+      eliminarArticuloDelCarrito(id, nombreProducto);
     });
   });
 
