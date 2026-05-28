@@ -1,3 +1,11 @@
+// Elimina un artículo del carrito por id
+export function removeFromCart(id) {
+  const idx = cart.findIndex(item => String(item.id) === String(id));
+  if (idx !== -1) {
+    cart.splice(idx, 1);
+    persist();
+  }
+}
 import { storage } from "../core/storage.js";
 
 const STORAGE_KEY = "cart";
